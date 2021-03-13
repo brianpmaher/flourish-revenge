@@ -4,6 +4,7 @@ public class PlayerController : MonoBehaviour
 {
     [Header("Dependencies")]
     [SerializeField] private CharacterController characterController;
+    [SerializeField] private Animator animator;
 
     [Header("Config")] 
     [SerializeField] private float moveSpeed = 3;
@@ -22,6 +23,7 @@ public class PlayerController : MonoBehaviour
         var movement = transform.TransformDirection(new Vector3(strafe, 0, forward));
         
         characterController.Move(movement);
+        animator.SetBool("Running", forward > 0);
     }
 
     private void Look()
