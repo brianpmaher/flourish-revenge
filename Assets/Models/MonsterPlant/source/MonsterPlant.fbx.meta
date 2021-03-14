@@ -29,14 +29,72 @@ ModelImporter:
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
     importConstraints: 0
-    animationCompression: 1
+    animationCompression: 3
     animationRotationError: 0.5
     animationPositionError: 0.5
     animationScaleError: 0.5
     animationWrapMode: 0
     extraExposedTransformPaths: []
     extraUserProperties: []
-    clipAnimations: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: PlantIdle
+      takeName: PlantIdle
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 59
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Armature|PlantIdle
+      takeName: Armature|PlantIdle
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 59
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     isReadable: 0
   meshes:
     lODScreenPercentages: []
@@ -83,7 +141,392 @@ ModelImporter:
   humanDescription:
     serializedVersion: 3
     human: []
-    skeleton: []
+    skeleton:
+    - name: MonsterPlant(Clone)
+      parentName: 
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Plant
+      parentName: MonsterPlant(Clone)
+      position: {x: 0.068122625, y: 0.84393734, z: -0.0006573625}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Armature
+      parentName: MonsterPlant(Clone)
+      position: {x: 0.015250221, y: 0.27357587, z: 0.0033169584}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 100, y: 100, z: 100}
+    - name: Root
+      parentName: Armature
+      position: {x: -0.0009137065, y: -0.00003526087, z: -0.0115210535}
+      rotation: {x: 0.7071067, y: -0, z: -0, w: 0.7071068}
+      scale: {x: 1, y: 0.99999994, z: 0.99999994}
+    - name: RootSmallLeft
+      parentName: Root
+      position: {x: 0.0021292877, y: 0.013149861, z: 0.00086382614}
+      rotation: {x: 0.10442002, y: -0.292459, z: -0.16296113, w: 0.93648696}
+      scale: {x: 1, y: 0.99999994, z: 1}
+    - name: RootSmallLeft.001
+      parentName: RootSmallLeft
+      position: {x: -8.940697e-11, y: 0.0014574768, z: 5.5879357e-11}
+      rotation: {x: -0.006965951, y: -0.24099874, z: -0.3737914, w: 0.89562887}
+      scale: {x: 1.0000001, y: 1.0000001, z: 1}
+    - name: RootSmallLeft.002
+      parentName: RootSmallLeft.001
+      position: {x: -0, y: 0.0015154667, z: 6.705522e-11}
+      rotation: {x: -0.005728336, y: -0.2583652, z: -0.43230066, w: 0.86390436}
+      scale: {x: 1.0000002, y: 1.0000001, z: 1.0000001}
+    - name: RootSmallLeft.003
+      parentName: RootSmallLeft.002
+      position: {x: 3.46452e-10, y: 0.0009623409, z: 1.7881394e-10}
+      rotation: {x: 0.021631652, y: -0.2976251, z: -0.56348425, w: 0.77034855}
+      scale: {x: 1.0000001, y: 0.99999976, z: 0.9999999}
+    - name: RootSmallLeft.004
+      parentName: RootSmallLeft.003
+      position: {x: -3.5762787e-10, y: 0.0008931529, z: 5.3085387e-11}
+      rotation: {x: -0.062920734, y: -0.27825588, z: -0.58979493, w: 0.75548434}
+      scale: {x: 1, y: 1, z: 1}
+    - name: RootSmallLeft.005
+      parentName: RootSmallLeft.004
+      position: {x: 4.4703484e-11, y: 0.00087571767, z: 2.2351743e-10}
+      rotation: {x: -0.12265678, y: -0.18774974, z: -0.6187519, w: 0.75289536}
+      scale: {x: 1.0000001, y: 0.99999994, z: 0.9999999}
+    - name: RootSmallLeft.006
+      parentName: RootSmallLeft.005
+      position: {x: -8.940697e-11, y: 0.0010057909, z: 0}
+      rotation: {x: -0.14629094, y: -0.13708335, z: -0.5461534, w: 0.813341}
+      scale: {x: 0.9999999, y: 0.9999999, z: 0.99999994}
+    - name: RootSmallLeft.007
+      parentName: RootSmallLeft.006
+      position: {x: 5.364418e-10, y: 0.0009161076, z: -8.940697e-11}
+      rotation: {x: 0.06502324, y: -0.024269663, z: -0.64105004, w: 0.7643545}
+      scale: {x: 1, y: 1, z: 1}
+    - name: RootSmallLeft.007_end
+      parentName: RootSmallLeft.007
+      position: {x: -0, y: 0.00055834296, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Root.001
+      parentName: Root
+      position: {x: 0.0015757954, y: 0.012886851, z: -0.0016110134}
+      rotation: {x: -0.70055324, y: -0.044953823, z: -0.6703439, w: 0.24050666}
+      scale: {x: 0.99999994, y: 1, z: 1}
+    - name: Root.002
+      parentName: Root.001
+      position: {x: -1.0058284e-10, y: 0.0014574759, z: -7.264316e-11}
+      rotation: {x: -0.28411925, y: -0.060559012, z: -0.16980132, w: 0.94168806}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Root.003
+      parentName: Root.002
+      position: {x: 2.682209e-10, y: 0.0013022824, z: -2.0116568e-10}
+      rotation: {x: 0.2846357, y: -0.0736341, z: 0.21187344, w: 0.9320248}
+      scale: {x: 0.99999994, y: 1, z: 1}
+    - name: Root.004
+      parentName: Root.003
+      position: {x: -8.940697e-11, y: 0.0009021193, z: 3.1292438e-10}
+      rotation: {x: -0.63931185, y: -0.17363955, z: -0.16976564, w: 0.7295953}
+      scale: {x: 1, y: 1.0000001, z: 1}
+    - name: Root.005
+      parentName: Root.004
+      position: {x: -2.0116568e-10, y: 0.00078660663, z: 2.9057265e-10}
+      rotation: {x: -0.19689497, y: 0.0229975, z: -0.23195836, w: 0.95231235}
+      scale: {x: 1.0000001, y: 1.0000001, z: 1.0000001}
+    - name: Root.006
+      parentName: Root.005
+      position: {x: 4.4703484e-11, y: 0.0006302442, z: 8.940697e-11}
+      rotation: {x: -0.552, y: -0.016417125, z: -0.14034703, w: 0.8217842}
+      scale: {x: 0.99999976, y: 0.99999976, z: 0.99999994}
+    - name: Root.007
+      parentName: Root.006
+      position: {x: 5.5879357e-11, y: 0.0005566313, z: -1.7881394e-10}
+      rotation: {x: -0.56851083, y: 0.02115948, z: -0.1969347, w: 0.79847634}
+      scale: {x: 0.99999994, y: 1, z: 1.0000001}
+    - name: Root.007_end
+      parentName: Root.007
+      position: {x: -0, y: 0.00041829923, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: MainBody
+      parentName: Armature
+      position: {x: -0.0009670933, y: -0.00003526059, z: 0.0016823929}
+      rotation: {x: 0.6915456, y: 0.14424546, z: -0.14118658, w: 0.6935591}
+      scale: {x: 1, y: 1, z: 1}
+    - name: MainBody.001
+      parentName: MainBody
+      position: {x: -6.6695066e-11, y: 0.0023654643, z: -1.5170371e-12}
+      rotation: {x: -0.0006512106, y: 0.0025920498, z: -0.21403846, w: 0.9768216}
+      scale: {x: 1.0000002, y: 1.0000002, z: 1}
+    - name: MainBody.002
+      parentName: MainBody.001
+      position: {x: 2.1744381e-10, y: 0.0018036845, z: -1.3969839e-12}
+      rotation: {x: -0.0023573672, y: 0.0010717754, z: 0.3510035, w: 0.9363706}
+      scale: {x: 1, y: 1, z: 0.9999999}
+    - name: MainBody.003
+      parentName: MainBody.002
+      position: {x: -1.6093009e-10, y: 0.0017051286, z: -3.3178367e-12}
+      rotation: {x: -0.0958717, y: 0.029276373, z: 0.20563029, w: 0.9734823}
+      scale: {x: 0.9999998, y: 0.99999976, z: 0.9999999}
+    - name: MainBody.004
+      parentName: MainBody.003
+      position: {x: 1.4559294e-10, y: 0.002634825, z: -1.3969839e-12}
+      rotation: {x: -0.000000025036142, y: 0.00000029914608, z: 0.10478007, w: 0.99449545}
+      scale: {x: 1, y: 1, z: 1.0000001}
+    - name: MainBody.004_end
+      parentName: MainBody.004
+      position: {x: -0, y: 0.0033588735, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: MainBody.005
+      parentName: MainBody.003
+      position: {x: 1.4559294e-10, y: 0.002634825, z: -1.3969839e-12}
+      rotation: {x: -0.0000001370611, y: 0.00000017835528, z: 0.70251983, w: 0.7116642}
+      scale: {x: 1.0000001, y: 1, z: 1.0000001}
+    - name: MainBody.005_end
+      parentName: MainBody.005
+      position: {x: -0, y: 0.0032299012, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: MainBody.006
+      parentName: MainBody.003
+      position: {x: -0.0016459783, y: 0.003328576, z: 0.0020363515}
+      rotation: {x: -0.028300663, y: -0.017449327, z: 0.488745, w: 0.871793}
+      scale: {x: 1, y: 1, z: 1.0000001}
+    - name: MainBody.007
+      parentName: MainBody.006
+      position: {x: 8.102506e-11, y: 0.001052526, z: -2.0116568e-10}
+      rotation: {x: -0.24779855, y: 0.00000015916352, z: 0.023720475, w: 0.9685212}
+      scale: {x: 1, y: 0.99999994, z: 0.99999994}
+    - name: MainBody.008
+      parentName: MainBody.007
+      position: {x: 0.0000000011650846, y: 0.000966165, z: 1.4528632e-10}
+      rotation: {x: 0.2513306, y: -0.026570497, z: -0.099738136, w: 0.9623821}
+      scale: {x: 0.99999994, y: 1, z: 1}
+    - name: MainBody.009
+      parentName: MainBody.008
+      position: {x: -1.1909287e-10, y: 0.0011275616, z: 6.146729e-11}
+      rotation: {x: -0.016892057, y: -0.0005708969, z: -0.0034368164, w: 0.99985135}
+      scale: {x: 1, y: 1, z: 0.99999994}
+    - name: MainBody.010
+      parentName: MainBody.009
+      position: {x: -9.729992e-10, y: 0.00069132756, z: 5.5879357e-11}
+      rotation: {x: -0.176577, y: 0.000000008707909, z: -0.0032416296, w: 0.98428154}
+      scale: {x: 0.9999999, y: 0.99999994, z: 1}
+    - name: MainBody.011
+      parentName: MainBody.010
+      position: {x: 5.573966e-10, y: 0.0008388061, z: -6.845221e-11}
+      rotation: {x: -0.07867068, y: -0.00000016983502, z: -0.0014437913, w: 0.9968996}
+      scale: {x: 0.99999994, y: 1, z: 0.9999999}
+    - name: MainBody.012
+      parentName: MainBody.011
+      position: {x: 6.291666e-10, y: 0.0011960106, z: -2.0395964e-10}
+      rotation: {x: -0.025817389, y: -0.000000041775557, z: -0.00047347895, w: 0.9996666}
+      scale: {x: 1.0000001, y: 1, z: 1}
+    - name: MainBody.013
+      parentName: MainBody.012
+      position: {x: 1.2572855e-10, y: 0.0010987978, z: -3.911555e-10}
+      rotation: {x: -0.0331284, y: -0.000000013239602, z: -0.0006083583, w: 0.9994509}
+      scale: {x: 0.99999994, y: 0.99999976, z: 0.9999999}
+    - name: MainBody.013_end
+      parentName: MainBody.013
+      position: {x: -0, y: 0.0008701583, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: MainBody.014
+      parentName: MainBody.003
+      position: {x: -0.0008360207, y: 0.004742785, z: 0.0018733962}
+      rotation: {x: -0.032929398, y: -0.06431955, z: -0.12367327, w: 0.98968863}
+      scale: {x: 1, y: 0.99999994, z: 1.0000001}
+    - name: MainBody.015
+      parentName: MainBody.014
+      position: {x: 7.1944667e-10, y: 0.0009775271, z: 5.5879357e-11}
+      rotation: {x: -0.20470832, y: -0.016252376, z: -0.046201725, w: 0.97759694}
+      scale: {x: 1, y: 0.99999994, z: 1}
+    - name: MainBody.016
+      parentName: MainBody.015
+      position: {x: 5.0850213e-10, y: 0.0008492353, z: 1.4528632e-10}
+      rotation: {x: -0.2554651, y: -0.043642372, z: -0.024976417, w: 0.9655098}
+      scale: {x: 1.0000001, y: 1.0000001, z: 1}
+    - name: MainBody.017
+      parentName: MainBody.016
+      position: {x: -1.6205012e-10, y: 0.0008473235, z: 3.46452e-10}
+      rotation: {x: -0.16874956, y: -0.007971786, z: 0.13648939, w: 0.9761305}
+      scale: {x: 1.0000001, y: 1, z: 1.0000001}
+    - name: MainBody.018
+      parentName: MainBody.017
+      position: {x: -0.0000000013166573, y: 0.00074513216, z: -2.0395964e-10}
+      rotation: {x: -0.21994127, y: 0.01702328, z: -0.020585159, w: 0.9751473}
+      scale: {x: 1, y: 1.0000001, z: 1}
+    - name: MainBody.019
+      parentName: MainBody.018
+      position: {x: -5.755574e-10, y: 0.0007156544, z: -2.1094457e-10}
+      rotation: {x: -0.17933881, y: 0.011698015, z: 0.0016225437, w: 0.9837165}
+      scale: {x: 1, y: 1, z: 1}
+    - name: MainBody.020
+      parentName: MainBody.019
+      position: {x: 0.0000000016987324, y: 0.0008888093, z: 5.5879355e-12}
+      rotation: {x: -0.26030117, y: 0.015022515, z: -0.016906872, w: 0.96526253}
+      scale: {x: 1, y: 0.99999994, z: 1}
+    - name: MainBody.021
+      parentName: MainBody.020
+      position: {x: 2.8917566e-10, y: 0.0010457347, z: 2.7939678e-11}
+      rotation: {x: -0.2674372, y: 0.01545533, z: 0.0073624146, w: 0.9634232}
+      scale: {x: 0.9999999, y: 0.99999994, z: 0.99999994}
+    - name: MainBody.021_end
+      parentName: MainBody.021
+      position: {x: -0, y: 0.00094810984, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: MainBody.022
+      parentName: MainBody.003
+      position: {x: 1.4559294e-10, y: 0.002634825, z: -1.3969839e-12}
+      rotation: {x: -0.4606695, y: -0.069850124, z: -0.3431278, w: 0.8155783}
+      scale: {x: 1, y: 1.0000001, z: 1.0000001}
+    - name: MainBody.022_end
+      parentName: MainBody.022
+      position: {x: -0, y: 0.0046581984, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: MainBody.023
+      parentName: MainBody.003
+      position: {x: 1.4559294e-10, y: 0.002634825, z: -1.3969839e-12}
+      rotation: {x: 0.46613684, y: 0.10656988, z: -0.32358378, w: 0.81648815}
+      scale: {x: 1, y: 1.0000001, z: 1}
+    - name: MainBody.023_end
+      parentName: MainBody.023
+      position: {x: -0, y: 0.0045977966, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: MainBody.024
+      parentName: MainBody.003
+      position: {x: 1.4559294e-10, y: 0.002634825, z: -1.3969839e-12}
+      rotation: {x: 0.87396747, y: -0.14957584, z: 0.18273452, w: 0.42475402}
+      scale: {x: 1, y: 1.0000001, z: 1}
+    - name: MainBody.024_end
+      parentName: MainBody.024
+      position: {x: -0, y: 0.0047878935, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: MainBody.025
+      parentName: MainBody.003
+      position: {x: 1.4559294e-10, y: 0.002634825, z: -1.3969839e-12}
+      rotation: {x: 0.7946314, y: -0.031220771, z: -0.41293, w: -0.4439313}
+      scale: {x: 1.0000001, y: 1.0000001, z: 1.0000002}
+    - name: MainBody.025_end
+      parentName: MainBody.025
+      position: {x: -0, y: 0.0045724646, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: MainBody.026
+      parentName: MainBody.001
+      position: {x: 2.1744381e-10, y: 0.0018036845, z: -1.3969839e-12}
+      rotation: {x: -0.67277455, y: -0.020997666, z: -0.18658029, w: 0.71562654}
+      scale: {x: 1, y: 1, z: 1}
+    - name: MainBody.026_end
+      parentName: MainBody.026
+      position: {x: -0, y: 0.0022102678, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: MainBody.027
+      parentName: MainBody
+      position: {x: -6.6695066e-11, y: 0.0023654643, z: -1.5170371e-12}
+      rotation: {x: 0.6298108, y: 0.08407044, z: -0.08162571, w: 0.7678592}
+      scale: {x: 1.0000001, y: 1.0000001, z: 1}
+    - name: MainBody.027_end
+      parentName: MainBody.027
+      position: {x: -0, y: 0.0018375496, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: MainBody.028
+      parentName: Armature
+      position: {x: -0.0009670933, y: -0.00003526059, z: 0.0016823929}
+      rotation: {x: 0.054886498, y: 0.009004141, z: 0.16163503, w: 0.98528194}
+      scale: {x: 1, y: 1, z: 1}
+    - name: MainBody.029
+      parentName: MainBody.028
+      position: {x: 1.937472e-11, y: 0.0016065757, z: -3.1851233e-10}
+      rotation: {x: 0.34679198, y: -0.1586069, z: 0.2442064, w: 0.8915955}
+      scale: {x: 1, y: 0.99999994, z: 1}
+    - name: MainBody.030
+      parentName: MainBody.029
+      position: {x: 8.940697e-11, y: 0.0015057353, z: 3.5762787e-10}
+      rotation: {x: -0.34967616, y: -0.012808105, z: 0.23388535, w: 0.9071164}
+      scale: {x: 0.99999994, y: 1, z: 0.9999999}
+    - name: MainBody.031
+      parentName: MainBody.030
+      position: {x: 2.682209e-10, y: 0.0008987319, z: -1.7881394e-10}
+      rotation: {x: -0.50401807, y: 0.0588919, z: 0.37950224, w: 0.773612}
+      scale: {x: 0.9999999, y: 1.0000001, z: 1}
+    - name: MainBody.032
+      parentName: MainBody.031
+      position: {x: -1.3969839e-10, y: 0.0012950678, z: 1.0896474e-10}
+      rotation: {x: -0.23727487, y: 0.014568722, z: -0.044564314, w: 0.97031045}
+      scale: {x: 0.99999994, y: 1, z: 1}
+    - name: MainBody.033
+      parentName: MainBody.032
+      position: {x: -1.428416e-10, y: 0.0014263357, z: -1.7462299e-11}
+      rotation: {x: -0.07598947, y: 0.022980796, z: 0.10149677, w: 0.9916632}
+      scale: {x: 1, y: 0.99999994, z: 1}
+    - name: MainBody.033_end
+      parentName: MainBody.033
+      position: {x: -0, y: 0.0008064235, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: MainBody.034
+      parentName: Armature
+      position: {x: -0.0009670933, y: -0.00003526059, z: 0.0016823929}
+      rotation: {x: 0.09790729, y: -0.6372602, z: 0.75959706, w: -0.08559201}
+      scale: {x: 0.99999666, y: 0.99999994, z: 1}
+    - name: MainBody.035
+      parentName: MainBody.034
+      position: {x: 4.4703484e-11, y: 0.0016436426, z: 0}
+      rotation: {x: 0.041490544, y: -0.016618311, z: 0.059561383, w: 0.9972236}
+      scale: {x: 0.9999999, y: 1.0000001, z: 1}
+    - name: MainBody.036
+      parentName: MainBody.035
+      position: {x: 1.1175871e-11, y: 0.0011297268, z: -1.2852251e-10}
+      rotation: {x: -0.15046546, y: -0.009998896, z: 0.060900148, w: 0.98668706}
+      scale: {x: 1, y: 1, z: 1}
+    - name: MainBody.037
+      parentName: MainBody.036
+      position: {x: 1.3411044e-10, y: 0.0009840737, z: -2.346933e-10}
+      rotation: {x: 0.16146292, y: 0.07782228, z: -0.093932405, w: 0.9793111}
+      scale: {x: 0.9999999, y: 0.9999999, z: 0.99999994}
+    - name: MainBody.038
+      parentName: MainBody.037
+      position: {x: 2.766028e-10, y: 0.0011376033, z: 4.4703484e-11}
+      rotation: {x: -0.2620058, y: -0.047935348, z: -0.028578471, w: 0.9634513}
+      scale: {x: 1, y: 1, z: 1}
+    - name: MainBody.039
+      parentName: MainBody.038
+      position: {x: 6.007031e-11, y: 0.0012142952, z: -4.4703484e-11}
+      rotation: {x: -0.060415547, y: -0.050993185, z: -0.01616099, w: 0.996739}
+      scale: {x: 1.0000001, y: 1.0000002, z: 1.0000001}
+    - name: MainBody.040
+      parentName: MainBody.039
+      position: {x: -2.2631139e-10, y: 0.0011526792, z: 7.8231095e-11}
+      rotation: {x: -0.047303528, y: -0.008425165, z: 0.14404121, w: 0.9884046}
+      scale: {x: 1, y: 1.0000001, z: 0.99999994}
+    - name: MainBody.040_end
+      parentName: MainBody.040
+      position: {x: -0, y: 0.0010049934, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: MainBody.041
+      parentName: Armature
+      position: {x: -0.0009045164, y: -0.00003526059, z: -0.0030309295}
+      rotation: {x: 0.7071068, y: 0.00000008429372, z: 0.0000000842937, w: 0.7071067}
+      scale: {x: 1, y: 1, z: 1}
+    - name: MainBody.041_end
+      parentName: MainBody.041
+      position: {x: -0, y: 0.0045675593, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Plant.001
+      parentName: MonsterPlant(Clone)
+      position: {x: -0.0052806614, y: 0.29226106, z: 0.005118884}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
     armTwist: 0.5
     foreArmTwist: 0.5
     upperLegTwist: 0.5
@@ -91,16 +534,16 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
-    globalScale: 0.003
+    globalScale: 0.3
     rootMotionBoneName: 
     hasTranslationDoF: 0
-    hasExtraRoot: 0
+    hasExtraRoot: 1
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
   autoGenerateAvatarMappingIfUnspecified: 1
   animationType: 2
   humanoidOversampling: 1
-  avatarSetup: 0
+  avatarSetup: 1
   addHumanoidExtraRootOnlyWhenUsingAvatar: 1
   additionalBone: 0
   userData: 

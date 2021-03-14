@@ -814,3 +814,60 @@ Animator:
   m_CorrespondingSourceObject: {fileID: 5866666021909216657, guid: 6a4dabe3e99f2d74cb8b3f1c95cceb81, type: 3}
   m_PrefabInstance: {fileID: 1319839575}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &8269663823214893314
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 8451292857696134714, guid: a92ceb3b23c7e384288874049e1fac6e, type: 3}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8451292857696134714, guid: a92ceb3b23c7e384288874049e1fac6e, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.59
+      objectReference: {fileID: 0}
+    - target: {fileID: 8451292857696134714, guid: a92ceb3b23c7e384288874049e1fac6e, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8451292857696134714, guid: a92ceb3b23c7e384288874049e1fac6e, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 3.82
+      objectReference: {fileID: 0}
+    - target: {fileID: 8451292857696134714, guid: a92ceb3b23c7e384288874049e1fac6e, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8451292857696134714, guid: a92ceb3b23c7e384288874049e1fac6e, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8451292857696134714, guid: a92ceb3b23c7e384288874049e1fac6e, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8451292857696134714, guid: a92ceb3b23c7e384288874049e1fac6e, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8451292857696134714, guid: a92ceb3b23c7e384288874049e1fac6e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8451292857696134714, guid: a92ceb3b23c7e384288874049e1fac6e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8451292857696134714, guid: a92ceb3b23c7e384288874049e1fac6e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9080055916060376192, guid: a92ceb3b23c7e384288874049e1fac6e, type: 3}
+      propertyPath: m_Name
+      value: MonsterPlant
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: a92ceb3b23c7e384288874049e1fac6e, type: 3}
