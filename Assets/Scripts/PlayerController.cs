@@ -14,16 +14,19 @@ public class PlayerController : MonoBehaviour
     {
         Move();
         Look();
+        CheckCursorLock();
     }
 
     private void Move()
     {
         var forward = Input.GetAxis("Vertical") * moveSpeed * Time.deltaTime;
         var strafe = Input.GetAxis("Horizontal") * moveSpeed * Time.deltaTime;
-        var movement = transform.TransformDirection(new Vector3(strafe, 0, forward));
+        var relativeMovement = new Vector3(strafe, 0, forward);
+        var movement = transform.TransformDirection(relativeMovement);
         
         characterController.Move(movement);
-        animator.SetBool("Running", forward > 0);
+        animator.SetFloat("MovementForward",  relativeMovement.normalized.z);
+        animator.SetFloat("MovementRight",  relativeMovement.normalized.x);
     }
 
     private void Look()
@@ -31,5 +34,28 @@ public class PlayerController : MonoBehaviour
         var horizontal = Input.GetAxis("Mouse X") * lookSpeed;
         
         transform.Rotate(0, horizontal, 0);
+    }
+
+    private void CheckCursorLock()
+    {
+        if (Input.GetButton("Fire1"))
+        {
+            LockCursor();
+        }
+
+        if (Input.GetButton("Cancel"))
+        {
+            UnlockCursor();
+        }
+    }
+
+    private void LockCursor()
+    {
+        Cursor.lockState = CursorLockMode.Locked;
+    }
+
+    private void UnlockCursor()
+    {
+        Cursor.lockState = CursorLockMode.None;
     }
 }
