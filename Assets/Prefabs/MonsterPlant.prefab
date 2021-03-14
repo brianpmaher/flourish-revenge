@@ -424,13 +424,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1397832306090753262}
   m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: 0.08607423, y: 0.3292335, z: 0.0033169584}
+  m_LocalPosition: {x: 0.08607423, y: 0.3292335, z: 0.003316958}
   m_LocalScale: {x: 100, y: 100, z: 100}
   m_Children:
   - {fileID: 4812182517278150419}
   - {fileID: 3723655493027976077}
   - {fileID: 2572603875054807855}
   - {fileID: 4430514391422926834}
+  - {fileID: 3406081076866861500}
   m_Father: {fileID: 8451292857696134714}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1073,8 +1074,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4572711167962624638}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.068122625, y: 0.84393734, z: -0.0006573625}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.068122715, y: 0.84393734, z: -0.0006573647}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8451292857696134714}
@@ -1902,12 +1903,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8550732897879977782}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.0052806614, y: 0.29226106, z: 0.005118884}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071067}
+  m_LocalPosition: {x: -0.00091354933, y: -0.000018019266, z: -0.0003697243}
+  m_LocalScale: {x: 0.01, y: 0.010000002, z: 0.010000002}
   m_Children: []
-  m_Father: {fileID: 8451292857696134714}
-  m_RootOrder: 2
+  m_Father: {fileID: 718837892565038756}
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &6208330488177766780
 MeshFilter:
@@ -2028,7 +2029,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8451292857696134714}
-  - component: {fileID: 8269663823389304235}
+  - component: {fileID: 919132147945121155}
   m_Layer: 0
   m_Name: MonsterPlant
   m_TagString: Untagged
@@ -2049,11 +2050,10 @@ Transform:
   m_Children:
   - {fileID: 718837892565038756}
   - {fileID: 3577197031813761231}
-  - {fileID: 3406081076866861500}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!95 &8269663823389304235
+--- !u!95 &919132147945121155
 Animator:
   serializedVersion: 3
   m_ObjectHideFlags: 0
