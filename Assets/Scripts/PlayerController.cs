@@ -1,20 +1,30 @@
 using UnityEngine;
+using UnityEngine.VFX;
 
 public class PlayerController : MonoBehaviour
 {
     [Header("Dependencies")]
     [SerializeField] private CharacterController characterController;
     [SerializeField] private Animator animator;
+    [SerializeField] private VisualEffect flamethrowerEffect;
+    [SerializeField] private AudioSource flamethrowerSoundEffect;
 
     [Header("Config")] 
     [SerializeField] private float moveSpeed = 3;
     [SerializeField] private float lookSpeed = 3;
+
+    private void Awake()
+    {
+        flamethrowerEffect.Stop();
+        flamethrowerSoundEffect.Stop();
+    }
 
     private void Update()
     {
         Move();
         Look();
         CheckCursorLock();
+        Fire();
     }
 
     private void Move()
@@ -34,6 +44,20 @@ public class PlayerController : MonoBehaviour
         var horizontal = Input.GetAxis("Mouse X") * lookSpeed;
         
         transform.Rotate(0, horizontal, 0);
+    }
+
+    private void Fire()
+    {
+        if (Input.GetButtonDown("Fire1"))
+        {
+            flamethrowerEffect.Play();
+            flamethrowerSoundEffect.Play();
+        }
+        else if (Input.GetButtonUp("Fire1"))
+        {
+            flamethrowerEffect.Stop();
+            flamethrowerSoundEffect.Stop();
+        }
     }
 
     private void CheckCursorLock()
