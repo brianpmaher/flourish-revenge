@@ -15,8 +15,6 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float lookSpeed = 3;
 
     [Header("Input")] 
-    [SerializeField] private InputAction onClick;
-    [SerializeField] private InputAction onPause;
     [SerializeField] private InputAction onMove;
     [SerializeField] private InputAction onLook;
     [SerializeField] private InputAction onFire;
@@ -30,8 +28,6 @@ public class PlayerController : MonoBehaviour
         flamethrowerSoundEffect.Stop();
 
         // Handle inputs
-        onClick.performed += _ => ResumeGame();
-        onPause.performed += _ => PauseGame();
         onMove.performed += ctx => moveDirection = ctx.ReadValue<Vector2>();
         onMove.canceled += ctx => moveDirection = Vector2.zero;
         onLook.performed += ctx => lookDirection = ctx.ReadValue<Vector2>();
@@ -42,8 +38,6 @@ public class PlayerController : MonoBehaviour
 
     private void OnEnable()
     {
-        onClick.Enable();
-        onPause.Enable();
         onMove.Enable();
         onLook.Enable();
         onFire.Enable();
@@ -57,8 +51,6 @@ public class PlayerController : MonoBehaviour
 
     private void OnDisable()
     {
-        onClick.Disable();
-        onPause.Disable();
         onMove.Disable();
         onLook.Disable();
         onFire.Disable();
@@ -91,19 +83,5 @@ public class PlayerController : MonoBehaviour
     {
         flamethrowerEffect.Stop();
         flamethrowerSoundEffect.Stop();
-    }
-
-    // TODO: This should be in a game manager
-    private void ResumeGame()
-    {
-        Cursor.lockState = CursorLockMode.Locked;
-        Time.timeScale = 1;
-    }
-
-    // TODO: This should be in a game manager
-    private void PauseGame()
-    {
-        Cursor.lockState = CursorLockMode.None;
-        Time.timeScale = 0;
     }
 }
