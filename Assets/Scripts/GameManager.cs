@@ -21,6 +21,11 @@ public class GameManager : MonoBehaviour
         onCancel.Enable();
     }
 
+    private void Start()
+    {
+        ResumeGame();
+    }
+
     private void OnDisable()
     {
         onClick.Disable();
