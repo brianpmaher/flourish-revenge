@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.VFX;
@@ -9,6 +10,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Animator animator;
     [SerializeField] private VisualEffect flamethrowerEffect;
     [SerializeField] private AudioSource flamethrowerSoundEffect;
+    [SerializeField] private Transform flamethrowerNozzle;
 
     [Header("Config")] 
     [SerializeField] private float moveSpeed = 3;

@@ -511,6 +511,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &539216019 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 222168239950149282, guid: 4583ba414713cd642b3b0fa2f27bf7c6, type: 3}
+  m_PrefabInstance: {fileID: 3705720665149011552}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &984975818 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3705720664723980202, guid: 4583ba414713cd642b3b0fa2f27bf7c6, type: 3}
@@ -771,6 +776,10 @@ PrefabInstance:
       value: On Pause
       objectReference: {fileID: 0}
     - target: {fileID: 3705720666010488322, guid: 4583ba414713cd642b3b0fa2f27bf7c6, type: 3}
+      propertyPath: flamethrowerNozzle
+      value: 
+      objectReference: {fileID: 539216019}
+    - target: {fileID: 3705720666010488322, guid: 4583ba414713cd642b3b0fa2f27bf7c6, type: 3}
       propertyPath: onFire.m_SingletonActionBindings.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -999,10 +1008,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 919132147945121155, guid: a92ceb3b23c7e384288874049e1fac6e, type: 3}
-      propertyPath: m_Avatar
-      value: 
-      objectReference: {fileID: 9000000, guid: 4e7e0d7dd76bac04697a54b6af277881, type: 3}
     - target: {fileID: 8451292857696134714, guid: a92ceb3b23c7e384288874049e1fac6e, type: 3}
       propertyPath: m_RootOrder
       value: 6
