@@ -1,16 +1,12 @@
-using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.VFX;
 
 public class PlayerController : MonoBehaviour
 {
     [Header("Dependencies")]
     [SerializeField] private CharacterController characterController;
     [SerializeField] private Animator animator;
-    [SerializeField] private VisualEffect flamethrowerEffect;
-    [SerializeField] private AudioSource flamethrowerSoundEffect;
-    [SerializeField] private Transform flamethrowerNozzle;
+    [SerializeField] private Fireable weapon;
 
     [Header("Config")] 
     [SerializeField] private float moveSpeed = 3;
@@ -26,16 +22,13 @@ public class PlayerController : MonoBehaviour
 
     private void Awake()
     {
-        flamethrowerEffect.Stop();
-        flamethrowerSoundEffect.Stop();
-
         // Handle inputs
         onMove.performed += ctx => moveDirection = ctx.ReadValue<Vector2>();
         onMove.canceled += ctx => moveDirection = Vector2.zero;
         onLook.performed += ctx => lookDirection = ctx.ReadValue<Vector2>();
         onLook.canceled += ctx => lookDirection = Vector2.zero;
-        onFire.performed += _ => StartFiring();
-        onFire.canceled += _ => StopFiring();
+        onFire.performed += _ => weapon.StartFiring();
+        onFire.canceled += _ => weapon.StopFiring();
     }
 
     private void OnEnable()
@@ -73,17 +66,5 @@ public class PlayerController : MonoBehaviour
     {
         var normalizedLook = lookDirection * (lookSpeed * Time.deltaTime);
         transform.Rotate(0, normalizedLook.x, 0);
-    }
-
-    private void StartFiring()
-    {
-        flamethrowerEffect.Play();
-        flamethrowerSoundEffect.Play();
-    }
-
-    private void StopFiring()
-    {
-        flamethrowerEffect.Stop();
-        flamethrowerSoundEffect.Stop();
     }
 }

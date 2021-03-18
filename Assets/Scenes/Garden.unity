@@ -511,6 +511,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &524499206 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 3705720665489795547, guid: 4583ba414713cd642b3b0fa2f27bf7c6, type: 3}
+  m_PrefabInstance: {fileID: 3705720665149011552}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &539216019 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 222168239950149282, guid: 4583ba414713cd642b3b0fa2f27bf7c6, type: 3}
@@ -727,6 +732,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3705720666010488322, guid: 4583ba414713cd642b3b0fa2f27bf7c6, type: 3}
+      propertyPath: weapon
+      value: 
+      objectReference: {fileID: 3705720665149011553}
     - target: {fileID: 3705720666010488322, guid: 4583ba414713cd642b3b0fa2f27bf7c6, type: 3}
       propertyPath: lookSpeed
       value: 10
@@ -995,12 +1004,27 @@ PrefabInstance:
       propertyPath: m_Name
       value: Timmy
       objectReference: {fileID: 0}
+    - target: {fileID: 4633395113544502314, guid: 4583ba414713cd642b3b0fa2f27bf7c6, type: 3}
+      propertyPath: flamethrowerSoundEffect
+      value: 
+      objectReference: {fileID: 524499206}
     - target: {fileID: 6514336605572283693, guid: 4583ba414713cd642b3b0fa2f27bf7c6, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4583ba414713cd642b3b0fa2f27bf7c6, type: 3}
+--- !u!114 &3705720665149011553 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4633395113544502314, guid: 4583ba414713cd642b3b0fa2f27bf7c6, type: 3}
+  m_PrefabInstance: {fileID: 3705720665149011552}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e54c1265f9f42c2b3ae10c506884d04, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &8269663823214893314
 PrefabInstance:
   m_ObjectHideFlags: 0

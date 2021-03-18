@@ -524,6 +524,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7962494512578398658}
   - component: {fileID: 4350604597052626699}
+  - component: {fileID: 1885516130278902791}
   m_Layer: 0
   m_Name: flamethrower
   m_TagString: Untagged
@@ -564,6 +565,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 2
+--- !u!114 &1885516130278902791
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7335139207323308920}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e54c1265f9f42c2b3ae10c506884d04, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  flamethrowerEffect: {fileID: 1999076609}
+  flamethrowerSoundEffect: {fileID: 0}
 --- !u!1 &7386535916777777937
 GameObject:
   m_ObjectHideFlags: 0
