@@ -3,7 +3,7 @@
 public class Damager : MonoBehaviour
 {
     [Header("Config")] 
-    [SerializeField] private float damage;
+    [SerializeField] public float damage;
 
     private void OnCollisionEnter(Collision other)
     {

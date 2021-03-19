@@ -7,6 +7,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private CharacterController characterController;
     [SerializeField] private Animator animator;
     [SerializeField] private Fireable weapon;
+    [SerializeField] private Damageable damageable;
 
     [Header("Config")] 
     [SerializeField] private float moveSpeed = 3;
@@ -24,6 +25,8 @@ public class PlayerController : MonoBehaviour
 
     private void Awake()
     {
+        damageable.onDie.AddListener(Die);
+        
         // Handle inputs
         onMove.performed += ctx => moveDirection = ctx.ReadValue<Vector2>();
         onMove.canceled += ctx => moveDirection = Vector2.zero;
@@ -68,5 +71,10 @@ public class PlayerController : MonoBehaviour
     {
         var normalizedLook = lookDirection * (lookSpeed * Time.deltaTime);
         transform.Rotate(0, normalizedLook.x, 0);
+    }
+
+    private void Die()
+    {
+        Debug.Log("I died");
     }
 }

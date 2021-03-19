@@ -521,6 +521,22 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 4588099973620558950, guid: 4583ba414713cd642b3b0fa2f27bf7c6, type: 3}
   m_PrefabInstance: {fileID: 3705720665149011552}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1154866505
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1154866504}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f3262e090984c078a6d046f7dab588a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onDie:
+    m_PersistentCalls:
+      m_Calls: []
+  health: 9
 --- !u!1 &1500361968
 GameObject:
   m_ObjectHideFlags: 0
@@ -727,6 +743,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3705720666010488322, guid: 4583ba414713cd642b3b0fa2f27bf7c6, type: 3}
+      propertyPath: damageable
+      value: 
+      objectReference: {fileID: 1154866505}
     - target: {fileID: 3812266515593541340, guid: 4583ba414713cd642b3b0fa2f27bf7c6, type: 3}
       propertyPath: m_RootOrder
       value: 5
