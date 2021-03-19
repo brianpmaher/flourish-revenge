@@ -48,7 +48,13 @@ VisualEffect:
   m_ResourceVersion: 1
   m_PropertySheet:
     m_Float:
-      m_Array: []
+      m_Array:
+      - m_Value: 1
+        m_Name: SoftParticleFactor
+        m_Overridden: 0
+      - m_Value: 5
+        m_Name: StartVelocity
+        m_Overridden: 0
     m_Vector2f:
       m_Array: []
     m_Vector3f:
@@ -64,7 +70,38 @@ VisualEffect:
     m_AnimationCurve:
       m_Array: []
     m_Gradient:
-      m_Array: []
+      m_Array:
+      - m_Value:
+          serializedVersion: 2
+          key0: {r: 0, g: 2.8235295, b: 3.4666667, a: 0}
+          key1: {r: 31.999996, g: 3.350785, b: 0, a: 1}
+          key2: {r: 10.53527, g: 1.4341205, b: 0.38610935, a: 0.8}
+          key3: {r: 0.014112299, g: 0.014112299, b: 0.014112299, a: 0.9764706}
+          key4: {r: 0.01886791, g: 0.016998919, b: 0.016998919, a: 0.94509804}
+          key5: {r: 0.5, g: 0.5, b: 0.5, a: 0}
+          key6: {r: 0, g: 0, b: 0, a: 0}
+          key7: {r: 0, g: 0, b: 0, a: 0}
+          ctime0: 11180
+          ctime1: 13685
+          ctime2: 39321
+          ctime3: 50850
+          ctime4: 53278
+          ctime5: 65535
+          ctime6: 0
+          ctime7: 0
+          atime0: 0
+          atime1: 6554
+          atime2: 41634
+          atime3: 50850
+          atime4: 53884
+          atime5: 65535
+          atime6: 0
+          atime7: 0
+          m_Mode: 0
+          m_NumColorKeys: 6
+          m_NumAlphaKeys: 6
+        m_Name: FlamethrowerGradient
+        m_Overridden: 0
     m_NamedObject:
       m_Array: []
     m_Bool:
@@ -523,7 +560,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7962494512578398658}
-  - component: {fileID: 4350604597052626699}
   - component: {fileID: 1885516130278902791}
   m_Layer: 0
   m_Name: flamethrower
@@ -552,19 +588,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4350604597052626699
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7335139207323308920}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9917be55363a4a589224f5159836e3f1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damage: 2
 --- !u!114 &1885516130278902791
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -578,7 +601,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   flamethrowerEffect: {fileID: 1999076609}
-  flamethrowerSoundEffect: {fileID: 0}
+  flamethrowerSoundEffect: {fileID: 3705720665489795547}
+  flameColliderPrefab: {fileID: 4075314513550734803, guid: 9140c4b20921a9a4baed98b5e92438b9, type: 3}
+  nozzleTransform: {fileID: 6445458618929706639}
 --- !u!1 &7386535916777777937
 GameObject:
   m_ObjectHideFlags: 0
