@@ -34,6 +34,7 @@ public class EnemyController : MonoBehaviour
     private void StartAttacking()
     {
         animator.SetBool(Attacking, true);
+        transform.LookAt(player.transform.position);
     }
 
     private void StopAttacking()
