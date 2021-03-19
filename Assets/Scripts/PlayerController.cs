@@ -19,6 +19,8 @@ public class PlayerController : MonoBehaviour
 
     private Vector2 moveDirection = Vector2.zero;
     private Vector2 lookDirection = Vector2.zero;
+    private static readonly int MovementForward = Animator.StringToHash("MovementForward");
+    private static readonly int MovementRight = Animator.StringToHash("MovementRight");
 
     private void Awake()
     {
@@ -58,8 +60,8 @@ public class PlayerController : MonoBehaviour
         var globalMovement = transform.TransformDirection(localMovement);
         
         characterController.Move(globalMovement);
-        animator.SetFloat("MovementForward",  localMovement.normalized.z);
-        animator.SetFloat("MovementRight",  localMovement.normalized.x);
+        animator.SetFloat(MovementForward,  localMovement.normalized.z);
+        animator.SetFloat(MovementRight,  localMovement.normalized.x);
     }
 
     private void Look()

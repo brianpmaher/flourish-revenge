@@ -2120,10 +2120,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f3262e090984c078a6d046f7dab588a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 10
   onDie:
     m_PersistentCalls:
       m_Calls: []
+  health: 10
 --- !u!114 &321875541341963301
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2137,3 +2137,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damageable: {fileID: 2767396379301933791}
+  animator: {fileID: 919132147945121155}
+  player: {fileID: 0}
+  attackingDistance: 2
