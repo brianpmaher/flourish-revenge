@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using UnityEngine;
 
 public class EnemyController : MonoBehaviour
@@ -7,7 +6,7 @@ public class EnemyController : MonoBehaviour
     [Header("Dependencies")] 
     [SerializeField] private Damageable damageable;
     [SerializeField] private Animator animator;
-    [SerializeField] private GameObject player;
+    [SerializeField] public GameObject player;
     [SerializeField] private Damager damager;
     [SerializeField] private CharacterController controller;
 
@@ -25,6 +24,10 @@ public class EnemyController : MonoBehaviour
     private void Awake()
     {
         damageable.onDie.AddListener(() => Destroy(gameObject));
+    }
+
+    private void Start()
+    {
         playerDamageable = player.GetComponent<Damageable>();
     }
 
