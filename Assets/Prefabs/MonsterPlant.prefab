@@ -2141,7 +2141,88 @@ MonoBehaviour:
   animator: {fileID: 919132147945121155}
   player: {fileID: 0}
   damager: {fileID: 8278803043370777178}
+  controller: {fileID: 1790782222}
   attackingDistance: 2
+  giveDamageOffset: 0.7
+  moveSpeed: 4
+  hopAnimation:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0.015643064
+      outSlope: 0.015643064
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.20040965
+      value: 0.0031350208
+      inSlope: 0.03694853
+      outSlope: 0.03694853
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.12653974
+    - serializedVersion: 3
+      time: 0.2602563
+      value: 0.5042215
+      inSlope: 6.214886
+      outSlope: 6.214886
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.23602475
+      outWeight: 0.038523182
+    - serializedVersion: 3
+      time: 0.4499629
+      value: 1.0064546
+      inSlope: 0.21703865
+      outSlope: 0.21703865
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.60347575
+      value: 1.0004699
+      inSlope: -0.34637052
+      outSlope: -0.34637052
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.7169446
+      value: 0.6204594
+      inSlope: -10.192114
+      outSlope: -10.192114
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.13918123
+    - serializedVersion: 3
+      time: 0.7705626
+      value: -0.0027900338
+      inSlope: -0.10991772
+      outSlope: -0.10991772
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.2766271
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.9962158
+      value: 0
+      inSlope: -0.042510223
+      outSlope: -0.042510223
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.21169394
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!114 &8278803043370777178
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -915,8 +915,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4129022592469318716}
-  m_LocalRotation: {x: -0.054624274, y: 0.0084074065, z: -0.014139731, w: 0.9983715}
-  m_LocalPosition: {x: -0.0042613735, y: 0.60276335, z: -0.030737627}
+  m_LocalRotation: {x: -0.05616611, y: 0.34936354, z: 0.005395598, w: 0.9352869}
+  m_LocalPosition: {x: -0.023022171, y: 0.60276335, z: -0.020807266}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 6391651726317366876}
@@ -998,6 +998,7 @@ GameObject:
   - component: {fileID: 7063835431232367782}
   - component: {fileID: 3705720666010488320}
   - component: {fileID: 3705720666010488322}
+  - component: {fileID: 1154866505}
   m_Layer: 0
   m_Name: Timmy
   m_TagString: Player
@@ -1074,6 +1075,7 @@ MonoBehaviour:
   characterController: {fileID: 3705720666010488320}
   animator: {fileID: 7063835431232367782}
   weapon: {fileID: 4633395113544502314}
+  damageable: {fileID: 1154866505}
   moveSpeed: 2
   lookSpeed: 10
   onMove:
@@ -1156,6 +1158,22 @@ MonoBehaviour:
       m_Groups: 
       m_Action: On Fire
       m_Flags: 0
+--- !u!114 &1154866505
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4588099973620558950}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f3262e090984c078a6d046f7dab588a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onDie:
+    m_PersistentCalls:
+      m_Calls: []
+  health: 9
 --- !u!1 &4680570647235883681
 GameObject:
   m_ObjectHideFlags: 0
