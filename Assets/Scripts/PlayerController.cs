@@ -42,7 +42,16 @@ public class PlayerController : MonoBehaviour
         onLook.Enable();
         onFire.Enable();
     }
-    
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Fuel"))
+        {
+            var fuel = other.GetComponent<Fuel>().PickUp();
+            weapon.IncreaseFuel(fuel);
+        }
+    }
+
     private void Update()
     {
         Move();

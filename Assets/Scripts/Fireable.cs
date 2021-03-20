@@ -16,6 +16,7 @@ public class Fireable : MonoBehaviour
     [Header("Config")] 
     [SerializeField] private float collidersPerSecond = 2;
     [SerializeField] private float fuelConsumedPerSecond = 5;
+    [SerializeField] private float maxFuel = 100;
 
     private bool isFiring;
     private float fuelLevel = 100;
@@ -79,5 +80,17 @@ public class Fireable : MonoBehaviour
     private void FireFuelChangedEvent()
     {
         onFuelChanged.Invoke(fuelLevel);
+    }
+
+    public void IncreaseFuel(float fuel)
+    {
+        fuelLevel += fuel;
+        
+        if (fuelLevel > maxFuel)
+        {
+            fuelLevel = maxFuel;
+        }
+        
+        FireFuelChangedEvent();
     }
 }
