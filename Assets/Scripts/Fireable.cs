@@ -1,16 +1,24 @@
 ﻿using System.Collections;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.VFX;
 
 public class Fireable : MonoBehaviour
 {
+    [HideInInspector] public UnityEvent<float> onFuelChanged;
+    
     [Header("Dependencies")]
     [SerializeField] private VisualEffect flamethrowerEffect;
     [SerializeField] private AudioSource flamethrowerSoundEffect;
     [SerializeField] private GameObject flameColliderPrefab;
     [SerializeField] private Transform nozzleTransform;
 
+    [Header("Config")] 
+    [SerializeField] private float collidersPerSecond = 2;
+    [SerializeField] private float fuelConsumedPerSecond = 5;
+
     private bool isFiring;
+    private float fuelLevel = 100;
     
     private void Awake()
     {
@@ -18,12 +26,20 @@ public class Fireable : MonoBehaviour
         flamethrowerSoundEffect.Stop();
     }
 
+    public void Start()
+    {
+        FireFuelChangedEvent();
+    }
+
     public void StartFiring()
     {
-        isFiring = true;
-        flamethrowerEffect.Play();
-        flamethrowerSoundEffect.Play();
-        StartCoroutine(SpawnFlameColliders());
+        if (fuelLevel > 0)
+        {
+            isFiring = true;
+            flamethrowerEffect.Play();
+            flamethrowerSoundEffect.Play();
+            StartCoroutine(SpawnFlameColliders());
+        }
     }
 
     public void StopFiring()
@@ -39,12 +55,29 @@ public class Fireable : MonoBehaviour
         var flameCollider = Instantiate(flameColliderPrefab);
         flameCollider.transform.position = nozzleTransform.position;
         flameCollider.transform.rotation = nozzleTransform.rotation;
+
+        var seconds = 1 / collidersPerSecond; // .5
+        fuelLevel -= seconds * fuelConsumedPerSecond;
+        if (fuelLevel < 0)
+        {
+            fuelLevel = 0;
+        }
+        FireFuelChangedEvent();
         
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(seconds);
         
-        if (isFiring)
+        if (isFiring && fuelLevel > 0)
         {
             yield return StartCoroutine(SpawnFlameColliders());
         }
+        else
+        {
+            StopFiring();
+        }
+    }
+
+    private void FireFuelChangedEvent()
+    {
+        onFuelChanged.Invoke(fuelLevel);
     }
 }
