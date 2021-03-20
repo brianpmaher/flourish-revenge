@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using UnityEngine;
 
 public class EnemyController : MonoBehaviour
@@ -8,13 +9,17 @@ public class EnemyController : MonoBehaviour
     [SerializeField] private Animator animator;
     [SerializeField] private GameObject player;
     [SerializeField] private Damager damager;
+    [SerializeField] private CharacterController controller;
 
     [Header("Config")] 
     [SerializeField] private float attackingDistance = 1;
-    [SerializeField] private float giveDamageOffset = .7f;
+    [SerializeField] [Range(0, 1)] private float giveDamageOffset = .7f;
+    [SerializeField] private float moveSpeed = 1.5f;
+    [SerializeField] private AnimationCurve hopAnimation = new AnimationCurve();
 
     private Damageable playerDamageable;
     private bool isAttacking;
+    private bool isMoving;
     private static readonly int Attacking = Animator.StringToHash("Attacking");
 
     private void Awake()
@@ -33,26 +38,58 @@ public class EnemyController : MonoBehaviour
             {
                 StartAttacking();
             }
+
+            if (isMoving)
+            {
+                StopMoving();
+            }
         }
         else
         {
-            StopAttacking();
+            if (isAttacking)
+            {
+                StopAttacking();
+            }
+
+            if (!isMoving)
+            {
+                StartMoving();
+            }
         }
     }
 
-    private IEnumerator Attack()
+    private void StartMoving()
     {
-        transform.LookAt(player.transform.position);
-        yield return new WaitForSeconds(giveDamageOffset);
+        isMoving = true;
+        StartCoroutine(Move());
+    }
+
+    private void StopMoving()
+    {
+        isMoving = false;
+        StopCoroutine(Move());
+    }
+    
+    private IEnumerator Move()
+    {
+        FacePlayer();
+
+        var ellapsedTime = 0f;
+        while (ellapsedTime < 1f /* animation time */)
+        {
+            ellapsedTime += Time.deltaTime;
+            var adjustment = hopAnimation.Evaluate(ellapsedTime) * Time.deltaTime;
+            transform.position += moveSpeed * adjustment * transform.forward;
+            yield return null;
+        }
         
         var distanceToPlayer = Vector3.Magnitude(transform.position - player.transform.position);
-        if (distanceToPlayer <= attackingDistance)
+        if (distanceToPlayer > attackingDistance)
         {
-            playerDamageable.TakeDamage(damager.damage);
-            StartCoroutine(Attack());
+            StartCoroutine(Move());
         }
     }
-
+    
     private void StartAttacking()
     {
         isAttacking = true;
@@ -64,5 +101,25 @@ public class EnemyController : MonoBehaviour
     {
         isAttacking = false;
         animator.SetBool(Attacking, false);
+    }
+    
+    private IEnumerator Attack()
+    {
+        FacePlayer();
+        yield return new WaitForSeconds(giveDamageOffset);
+        
+        var distanceToPlayer = Vector3.Magnitude(transform.position - player.transform.position);
+        if (distanceToPlayer <= attackingDistance)
+        {
+            playerDamageable.TakeDamage(damager.damage);
+            // Wait remainder of animation.
+            yield return new WaitForSeconds(1 - giveDamageOffset); 
+            StartCoroutine(Attack());
+        }
+    }
+
+    private void FacePlayer()
+    {
+        transform.LookAt(player.transform.position);
     }
 }
