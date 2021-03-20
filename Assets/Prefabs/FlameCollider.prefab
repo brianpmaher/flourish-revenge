@@ -110,7 +110,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startVelocity: 0.026
-  life: 2
+  life: 1.6
   velocityOverLife:
     serializedVersion: 2
     m_Curve:
@@ -124,13 +124,31 @@ MonoBehaviour:
       inWeight: 0
       outWeight: 0.061635133
     - serializedVersion: 3
-      time: 0.9949951
-      value: 0.9077759
-      inSlope: -0.31408814
-      outSlope: -0.31408814
+      time: 0.5479594
+      value: 0.9004944
+      inSlope: -0.48097515
+      outSlope: -0.48097515
       tangentMode: 0
       weightedMode: 0
-      inWeight: 0.057862915
+      inWeight: 0.33333334
+      outWeight: 0.071169294
+    - serializedVersion: 3
+      time: 0.55789214
+      value: 0.899711
+      inSlope: 0.005708055
+      outSlope: 0.005708055
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.69976807
+      value: 0.9003906
+      inSlope: -0.007295191
+      outSlope: -0.007295191
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.32099754
       outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
