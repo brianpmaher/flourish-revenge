@@ -74,7 +74,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canisterPrefab: {fileID: 8781209161612484195, guid: 5ebfefd50c459a341ae4d2491c2d81b8, type: 3}
   fuelAmount: 100
-  respawnTime: 5
+  respawnTime: 30
 --- !u!1001 &4055659511153076651
 PrefabInstance:
   m_ObjectHideFlags: 0
