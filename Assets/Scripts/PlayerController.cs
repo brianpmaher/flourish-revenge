@@ -25,8 +25,6 @@ public class PlayerController : MonoBehaviour
 
     private void Awake()
     {
-        damageable.onDie.AddListener(Die);
-        
         // Handle inputs
         onMove.performed += ctx => moveDirection = ctx.ReadValue<Vector2>();
         onMove.canceled += ctx => moveDirection = Vector2.zero;
@@ -38,11 +36,13 @@ public class PlayerController : MonoBehaviour
 
     private void OnEnable()
     {
+        damageable.onDie.AddListener(Die);
+    
         onMove.Enable();
         onLook.Enable();
         onFire.Enable();
     }
-
+    
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Fuel"))
@@ -60,6 +60,8 @@ public class PlayerController : MonoBehaviour
 
     private void OnDisable()
     {
+        damageable.onDie.RemoveListener(Die);
+        
         onMove.Disable();
         onLook.Disable();
         onFire.Disable();

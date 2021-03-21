@@ -21,9 +21,14 @@ public class EnemyController : MonoBehaviour
     private bool isMoving;
     private static readonly int Attacking = Animator.StringToHash("Attacking");
 
-    private void Awake()
+    private void OnEnable()
     {
-        damageable.onDie.AddListener(() => Destroy(gameObject));
+        damageable.onDie.AddListener(Die);
+    }
+
+    private void OnDisable()
+    {
+        damageable.onDie.RemoveListener(Die);
     }
 
     private void Start()
@@ -124,5 +129,10 @@ public class EnemyController : MonoBehaviour
     private void FacePlayer()
     {
         transform.LookAt(player.transform.position);
+    }
+
+    private void Die()
+    {
+        Destroy(gameObject);
     }
 }

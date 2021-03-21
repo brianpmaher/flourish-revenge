@@ -7,9 +7,14 @@ public class FuelUI : MonoBehaviour
     [SerializeField] private Fireable flamethrower;
     [SerializeField] private TextMeshProUGUI testUi;
 
-    private void Awake()
+    private void OnEnable()
     {
         flamethrower.onFuelChanged.AddListener(HandleFuelChanged);
+    }
+
+    private void OnDisable()
+    {
+        flamethrower.onFuelChanged.RemoveListener(HandleFuelChanged);
     }
 
     private void HandleFuelChanged(float fuelLevel)
