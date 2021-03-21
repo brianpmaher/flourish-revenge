@@ -18,14 +18,14 @@ RenderSettings:
   m_FogColor: {r: 0.13725491, g: 0.121568635, b: 0.11764707, a: 1}
   m_FogMode: 1
   m_FogDensity: 0.24
-  m_LinearFogStart: 5
-  m_LinearFogEnd: 30
+  m_LinearFogStart: 4
+  m_LinearFogEnd: 25
   m_AmbientSkyColor: {r: 0.9433962, g: 0.36962464, b: 0.031149892, a: 1}
   m_AmbientEquatorColor: {r: 1, g: 0.19515002, b: 0, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
-  m_AmbientIntensity: 1
+  m_AmbientIntensity: 0
   m_AmbientMode: 0
-  m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
+  m_SubtractiveShadowColor: {r: 0, g: 0, b: 0, a: 1}
   m_SkyboxMaterial: {fileID: 2100000, guid: 0c56b35a6d7bad544a5b576592b6e51e, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
@@ -35,10 +35,10 @@ RenderSettings:
   m_DefaultReflectionMode: 0
   m_DefaultReflectionResolution: 128
   m_ReflectionBounces: 1
-  m_ReflectionIntensity: 1
+  m_ReflectionIntensity: 0.5
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.30291805, g: 0.07874217, b: 0, a: 1}
+  m_IndirectSpecularColor: {r: 0.15145902, g: 0.039371084, b: 0, a: 0.5}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -10594,6 +10594,38 @@ PrefabInstance:
     - target: {fileID: 6514336605572283693, guid: 4583ba414713cd642b3b0fa2f27bf7c6, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6786431661171505502, guid: 4583ba414713cd642b3b0fa2f27bf7c6, type: 3}
+      propertyPath: LightsModule.light
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6786431661171505502, guid: 4583ba414713cd642b3b0fa2f27bf7c6, type: 3}
+      propertyPath: LightsModule.maxLights
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 6786431661171505502, guid: 4583ba414713cd642b3b0fa2f27bf7c6, type: 3}
+      propertyPath: VelocityModule.z.scalar
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6786431661171505502, guid: 4583ba414713cd642b3b0fa2f27bf7c6, type: 3}
+      propertyPath: LightsModule.rangeCurve.scalar
+      value: 1.45
+      objectReference: {fileID: 0}
+    - target: {fileID: 6786431661171505502, guid: 4583ba414713cd642b3b0fa2f27bf7c6, type: 3}
+      propertyPath: InitialModule.startSpeed.scalar
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6786431661171505502, guid: 4583ba414713cd642b3b0fa2f27bf7c6, type: 3}
+      propertyPath: LightsModule.intensityCurve.scalar
+      value: 2.89
+      objectReference: {fileID: 0}
+    - target: {fileID: 6786431661171505502, guid: 4583ba414713cd642b3b0fa2f27bf7c6, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.a
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6786431661171505502, guid: 4583ba414713cd642b3b0fa2f27bf7c6, type: 3}
+      propertyPath: VelocityModule.speedModifier.scalar
+      value: 0.12
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4583ba414713cd642b3b0fa2f27bf7c6, type: 3}

@@ -118,7 +118,7 @@ VFXRenderer:
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
   m_MotionVectors: 0
-  m_LightProbeUsage: 0
+  m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 0
   m_RayTracingMode: 0
   m_RayTraceProcedural: 0
@@ -526,8 +526,9 @@ MonoBehaviour:
   flamethrowerSoundEffect: {fileID: 3705720665489795547}
   flameColliderPrefab: {fileID: 4075314513550734803, guid: 9140c4b20921a9a4baed98b5e92438b9, type: 3}
   nozzleTransform: {fileID: 6445458618929706639}
-  collidersPerSecond: 2
+  collidersPerSecond: 4
   fuelConsumedPerSecond: 5
+  maxFuel: 100
 --- !u!1 &7386535916777777937
 GameObject:
   m_ObjectHideFlags: 0
