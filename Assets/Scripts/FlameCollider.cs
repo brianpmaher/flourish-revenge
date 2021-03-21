@@ -18,7 +18,7 @@ public class FlameCollider : MonoBehaviour
     {
         lifeTime += Time.deltaTime;
         var velocityAdjustment = velocityOverLife.Evaluate(lifeTime / life);
-        transform.position += transform.TransformDirection(new Vector3(0, 0, startVelocity * velocityAdjustment));
+        transform.position += transform.TransformDirection(new Vector3(0, 0, startVelocity * velocityAdjustment * Time.deltaTime));
 
         if (lifeTime >= life)
         {

@@ -110,8 +110,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a0de8647dd34d4ebf3b4833a4fb8f59, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startVelocity: 0.02
-  life: 1.45
+  startVelocity: 5
+  life: 1.6
   velocityOverLife:
     serializedVersion: 2
     m_Curve:
