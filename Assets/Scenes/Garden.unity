@@ -7743,8 +7743,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Fuel level: 100'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 5d3366d04bf8fd74488031d4ddefa92c, type: 2}
+  m_sharedMaterial: {fileID: 1853854232331350622, guid: 5d3366d04bf8fd74488031d4ddefa92c, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -11711,6 +11711,10 @@ PrefabInstance:
     - target: {fileID: 6786431661171505502, guid: 4583ba414713cd642b3b0fa2f27bf7c6, type: 3}
       propertyPath: VelocityModule.speedModifier.scalar
       value: 0.12
+      objectReference: {fileID: 0}
+    - target: {fileID: 6865153332283299744, guid: 4583ba414713cd642b3b0fa2f27bf7c6, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.023022175
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4583ba414713cd642b3b0fa2f27bf7c6, type: 3}
