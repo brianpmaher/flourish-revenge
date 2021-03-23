@@ -1,8 +1,11 @@
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
+    [HideInInspector] public UnityEvent onDie;
+    
     [Header("Dependencies")]
     [SerializeField] private CharacterController characterController;
     [SerializeField] private Animator animator;
@@ -92,5 +95,6 @@ public class PlayerController : MonoBehaviour
         isDead = true;
         animator.SetBool(AnimateDie, true);
         Time.timeScale = 0.1f;
+        onDie.Invoke();
     }
 }
