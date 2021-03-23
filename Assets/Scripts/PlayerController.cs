@@ -20,8 +20,10 @@ public class PlayerController : MonoBehaviour
 
     private Vector2 moveDirection = Vector2.zero;
     private Vector2 lookDirection = Vector2.zero;
+    private bool isDead;
     private static readonly int MovementForward = Animator.StringToHash("MovementForward");
     private static readonly int MovementRight = Animator.StringToHash("MovementRight");
+    private static readonly int AnimateDie = Animator.StringToHash("Die");
 
     private void Awake()
     {
@@ -54,6 +56,7 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
+        if (isDead) return;
         Move();
         Look();
     }
@@ -86,6 +89,8 @@ public class PlayerController : MonoBehaviour
 
     private void Die()
     {
-        Debug.Log("I died");
+        isDead = true;
+        animator.SetBool(AnimateDie, true);
+        Time.timeScale = 0.1f;
     }
 }
