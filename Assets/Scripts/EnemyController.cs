@@ -19,16 +19,18 @@ public class EnemyController : MonoBehaviour
     private Damageable playerDamageable;
     private bool isAttacking;
     private bool isMoving;
+    private bool isDead;
     private static readonly int Attacking = Animator.StringToHash("Attacking");
+    private static readonly int DieAnimation = Animator.StringToHash("Die");
 
     private void OnEnable()
     {
-        damageable.onDie.AddListener(Die);
+        damageable.onDie.AddListener(HandleDeath);
     }
 
     private void OnDisable()
     {
-        damageable.onDie.RemoveListener(Die);
+        damageable.onDie.RemoveListener(HandleDeath);
     }
 
     private void Start()
@@ -38,6 +40,21 @@ public class EnemyController : MonoBehaviour
 
     private void Update()
     {
+        if (isDead)
+        {
+            if (isMoving)
+            {
+                StopMoving();
+            }
+
+            if (isAttacking)
+            {
+                StopAttacking();
+            }
+            
+            return;
+        }
+        
         var distanceToPlayer = Vector3.Magnitude(transform.position - player.transform.position);
 
         if (distanceToPlayer <= attackingDistance)
@@ -89,6 +106,10 @@ public class EnemyController : MonoBehaviour
             var adjustment = hopAnimation.Evaluate(ellapsedTime) * Time.deltaTime;
             transform.position += moveSpeed * adjustment * transform.forward;
             yield return null;
+            if (isDead)
+            {
+                yield break;
+            }
         }
         
         var distanceToPlayer = Vector3.Magnitude(transform.position - player.transform.position);
@@ -116,12 +137,23 @@ public class EnemyController : MonoBehaviour
         FacePlayer();
         yield return new WaitForSeconds(giveDamageOffset);
         
+        if (isDead)
+        {
+            yield break;
+        }
+        
         var distanceToPlayer = Vector3.Magnitude(transform.position - player.transform.position);
         if (distanceToPlayer <= attackingDistance)
         {
             playerDamageable.TakeDamage(damager.damage);
             // Wait remainder of animation.
-            yield return new WaitForSeconds(1 - giveDamageOffset); 
+            yield return new WaitForSeconds(1 - giveDamageOffset);
+
+            if (isDead)
+            {
+                yield break;
+            }
+            
             StartCoroutine(Attack());
         }
     }
@@ -131,8 +163,21 @@ public class EnemyController : MonoBehaviour
         transform.LookAt(player.transform.position);
     }
 
-    private void Die()
+    private void HandleDeath()
     {
+        if (isDead)
+        {
+            return;
+        }
+        
+        isDead = true;
+        StartCoroutine(Die());
+    }
+
+    private IEnumerator Die()
+    {
+        animator.SetBool(DieAnimation, true);
+        yield return new WaitForSeconds(5);
         Destroy(gameObject);
     }
 }
