@@ -8,7 +8,7 @@ public class EnemyController : MonoBehaviour
     [SerializeField] private Animator animator;
     [SerializeField] public GameObject player;
     [SerializeField] private Damager damager;
-    [SerializeField] private CharacterController controller;
+    [SerializeField] public GameManager gameManager;
 
     [Header("Config")] 
     [SerializeField] private float attackingDistance = 1;
@@ -16,10 +16,10 @@ public class EnemyController : MonoBehaviour
     [SerializeField] private float moveSpeed = 1.5f;
     [SerializeField] private AnimationCurve hopAnimation = new AnimationCurve();
 
-    private Damageable playerDamageable;
-    private bool isAttacking;
-    private bool isMoving;
-    private bool isDead;
+    private Damageable _playerDamageable;
+    private bool _isAttacking;
+    private bool _isMoving;
+    private bool _isDead;
     private static readonly int Attacking = Animator.StringToHash("Attacking");
     private static readonly int DieAnimation = Animator.StringToHash("Die");
 
@@ -35,19 +35,19 @@ public class EnemyController : MonoBehaviour
 
     private void Start()
     {
-        playerDamageable = player.GetComponent<Damageable>();
+        _playerDamageable = player.GetComponent<Damageable>();
     }
 
     private void Update()
     {
-        if (isDead)
+        if (_isDead)
         {
-            if (isMoving)
+            if (_isMoving)
             {
                 StopMoving();
             }
 
-            if (isAttacking)
+            if (_isAttacking)
             {
                 StopAttacking();
             }
@@ -59,24 +59,24 @@ public class EnemyController : MonoBehaviour
 
         if (distanceToPlayer <= attackingDistance)
         {
-            if (!isAttacking)
+            if (!_isAttacking)
             {
                 StartAttacking();
             }
 
-            if (isMoving)
+            if (_isMoving)
             {
                 StopMoving();
             }
         }
         else
         {
-            if (isAttacking)
+            if (_isAttacking)
             {
                 StopAttacking();
             }
 
-            if (!isMoving)
+            if (!_isMoving)
             {
                 StartMoving();
             }
@@ -85,13 +85,13 @@ public class EnemyController : MonoBehaviour
 
     private void StartMoving()
     {
-        isMoving = true;
+        _isMoving = true;
         StartCoroutine(Move());
     }
 
     private void StopMoving()
     {
-        isMoving = false;
+        _isMoving = false;
         StopCoroutine(Move());
     }
     
@@ -106,7 +106,7 @@ public class EnemyController : MonoBehaviour
             var adjustment = hopAnimation.Evaluate(ellapsedTime) * Time.deltaTime;
             transform.position += moveSpeed * adjustment * transform.forward;
             yield return null;
-            if (isDead)
+            if (_isDead)
             {
                 yield break;
             }
@@ -121,14 +121,14 @@ public class EnemyController : MonoBehaviour
     
     private void StartAttacking()
     {
-        isAttacking = true;
+        _isAttacking = true;
         animator.SetBool(Attacking, true);
         StartCoroutine(Attack());
     }
     
     private void StopAttacking()
     {
-        isAttacking = false;
+        _isAttacking = false;
         animator.SetBool(Attacking, false);
     }
     
@@ -137,7 +137,7 @@ public class EnemyController : MonoBehaviour
         FacePlayer();
         yield return new WaitForSeconds(giveDamageOffset);
         
-        if (isDead)
+        if (_isDead)
         {
             yield break;
         }
@@ -145,11 +145,11 @@ public class EnemyController : MonoBehaviour
         var distanceToPlayer = Vector3.Magnitude(transform.position - player.transform.position);
         if (distanceToPlayer <= attackingDistance)
         {
-            playerDamageable.TakeDamage(damager.damage);
+            _playerDamageable.TakeDamage(damager.damage);
             // Wait remainder of animation.
             yield return new WaitForSeconds(1 - giveDamageOffset);
 
-            if (isDead)
+            if (_isDead)
             {
                 yield break;
             }
@@ -165,18 +165,19 @@ public class EnemyController : MonoBehaviour
 
     private void HandleDeath()
     {
-        if (isDead)
+        if (_isDead)
         {
             return;
         }
         
-        isDead = true;
+        _isDead = true;
         StartCoroutine(Die());
     }
 
     private IEnumerator Die()
     {
         animator.SetBool(DieAnimation, true);
+        gameManager.IncreaseScore(1);
         yield return new WaitForSeconds(5);
         Destroy(gameObject);
     }

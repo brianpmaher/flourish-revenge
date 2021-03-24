@@ -1,10 +1,13 @@
 ﻿using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
+    [HideInInspector] public UnityEvent<int> onScoreChanged;
+    
     [Header("Dependencies")] 
     [SerializeField] private GameObject uiHud;
     [SerializeField] private GameObject uiGameOver;
@@ -14,8 +17,11 @@ public class GameManager : MonoBehaviour
     [Header("Inputs")] 
     [SerializeField] private InputAction onClick;
     [SerializeField] private InputAction onCancel;
+    
+    private bool GamePaused => Time.timeScale == 0;
+    private int _score;
 
-    private bool gamePaused => Time.timeScale == 0;
+    public int Score => _score;
 
     private void Awake()
     {
@@ -34,6 +40,7 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
+        _score = 0;
         ResumeGame();
     }
 
@@ -46,9 +53,15 @@ public class GameManager : MonoBehaviour
         playerController.onDie.RemoveListener(HandleGameOver);
     }
 
+    public void IncreaseScore(int score)
+    {
+        _score += score;
+        onScoreChanged.Invoke(_score);
+    }
+    
     private void HandleClick()
     {
-        if (gamePaused)
+        if (GamePaused)
         {
             ResumeGame();
         }
@@ -56,7 +69,7 @@ public class GameManager : MonoBehaviour
 
     private void HandleCancel()
     {
-        if (!gamePaused)
+        if (!GamePaused)
         {
             PauseGame();
         }

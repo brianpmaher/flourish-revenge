@@ -7,6 +7,7 @@ public class PlantSpawner : MonoBehaviour
     [SerializeField] private GameObject monsterPlantPrefab;
     [SerializeField] private GameObject player;
     [SerializeField] private Transform[] spawnPoints;
+    [SerializeField] private GameManager gameManager;
 
     [Header("Config")] 
     [SerializeField] private float spawnRate = 5;
@@ -23,6 +24,7 @@ public class PlantSpawner : MonoBehaviour
         plant.transform.position = spawnPoint.position;
         var controller = plant.GetComponent<EnemyController>();
         controller.player = player;
+        controller.gameManager = gameManager;
         
         yield return new WaitForSeconds(spawnRate);
         StartCoroutine(SpawnPlants());
