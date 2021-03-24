@@ -2142,7 +2142,7 @@ MonoBehaviour:
   animator: {fileID: 919132147945121155}
   player: {fileID: 0}
   damager: {fileID: 8278803043370777178}
-  controller: {fileID: 1790782222}
+  gameManager: {fileID: 0}
   attackingDistance: 2
   giveDamageOffset: 0.7
   moveSpeed: 4
@@ -2236,7 +2236,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9917be55363a4a589224f5159836e3f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 3
+  damage: 1
 --- !u!114 &6385597064857719682
 MonoBehaviour:
   m_ObjectHideFlags: 0

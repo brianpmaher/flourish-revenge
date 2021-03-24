@@ -4,13 +4,24 @@ using UnityEngine.Events;
 public class Damageable : MonoBehaviour
 {
     [HideInInspector] public UnityEvent onDie;
+    [HideInInspector] public UnityEvent<int> onHealthChanged;
     
     [Header("Config")] 
-    [SerializeField] private float health = 1;
+    [SerializeField] private int health = 1;
 
-    public void TakeDamage(float damage)
+    private int _startHealth;
+
+    public int MaxHealth => _startHealth;
+
+    private void Awake()
+    {
+        _startHealth = health;
+    }
+
+    public void TakeDamage(int damage)
     {
         health -= damage;
+        onHealthChanged.Invoke(health);
 
         if (health <= 0)
         {

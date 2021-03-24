@@ -1,7 +1,13 @@
 fileFormatVersion: 2
 guid: ee59eb41e8bfe934395e75e69971d3d8
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: -8630923909508717717
+    second: Health_Full
+  - first:
+      213: 5407656843090688360
+    second: Health_Empty
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -89,11 +95,53 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Health_Full
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 31
+        width: 554
+        height: 537
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b63ae42de6cc83880800000000000000
+      internalID: -8630923909508717717
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health_Empty
+      rect:
+        serializedVersion: 2
+        x: 698
+        y: 31
+        width: 555
+        height: 536
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 86971af6f3bdb0b40800000000000000
+      internalID: 5407656843090688360
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: eeda0db3dedd8854987d9889bd9321a9
     internalID: 0
     vertices: []
     indices: 
