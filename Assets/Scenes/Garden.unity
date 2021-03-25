@@ -7281,7 +7281,7 @@ MonoBehaviour:
   - {fileID: 1255487855}
   - {fileID: 1243184477}
   gameManager: {fileID: 3514528732759815035}
-  spawnRate: 5
+  spawnRate: 4.9
 --- !u!1 &1255487854
 GameObject:
   m_ObjectHideFlags: 0

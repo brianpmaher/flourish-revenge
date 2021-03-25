@@ -10,7 +10,8 @@ public class PlantSpawner : MonoBehaviour
     [SerializeField] private GameManager gameManager;
 
     [Header("Config")] 
-    [SerializeField] private float spawnRate = 5;
+    [SerializeField] private float minSpawnRate = 4;
+    [SerializeField] private float maxSpawnRate = 5;
 
     private void Start()
     {
@@ -25,7 +26,8 @@ public class PlantSpawner : MonoBehaviour
         var controller = plant.GetComponent<EnemyController>();
         controller.player = player;
         controller.gameManager = gameManager;
-        
+
+        var spawnRate = Random.Range(minSpawnRate, maxSpawnRate);
         yield return new WaitForSeconds(spawnRate);
         StartCoroutine(SpawnPlants());
     }
