@@ -20,6 +20,9 @@ public class Fireable : MonoBehaviour
 
     private bool isFiring;
     private float fuelLevel = 100;
+
+    public float MaxFuel => maxFuel;
+    public float FuelLevel => fuelLevel;
     
     private void Awake()
     {
