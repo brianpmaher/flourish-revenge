@@ -12,6 +12,7 @@ public class Damageable : MonoBehaviour
     private int _startHealth;
 
     public int MaxHealth => _startHealth;
+    public int CurrentHealth => health;
 
     private void Awake()
     {
