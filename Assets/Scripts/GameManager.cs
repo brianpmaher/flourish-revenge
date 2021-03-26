@@ -15,23 +15,23 @@ public class GameManager : MonoBehaviour
     [SerializeField] private PlayerController playerController;
     
     [Header("Inputs")] 
-    [SerializeField] private InputAction onClick;
     [SerializeField] private InputAction onCancel;
-    
+
+    public UnityEvent onGamePaused;
+    public UnityEvent onGameResumed;
+
     private bool GamePaused => Time.timeScale == 0;
     private int _score;
-
+    
     public int Score => _score;
 
     private void Awake()
     {
-        onClick.performed += _ => HandleClick();
         onCancel.performed += _ => HandleCancel();
     }
 
     private void OnEnable()
     {
-        onClick.Enable();
         onCancel.Enable();
         
         uiRetryButton.onClick.AddListener(RestartGame);
@@ -46,7 +46,6 @@ public class GameManager : MonoBehaviour
 
     private void OnDisable()
     {
-        onClick.Disable();
         onCancel.Disable();
         
         uiRetryButton.onClick.RemoveListener(RestartGame);
@@ -59,14 +58,6 @@ public class GameManager : MonoBehaviour
         onScoreChanged.Invoke(_score);
     }
     
-    private void HandleClick()
-    {
-        if (GamePaused)
-        {
-            ResumeGame();
-        }
-    }
-
     private void HandleCancel()
     {
         if (!GamePaused)
@@ -75,16 +66,18 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    private void ResumeGame()
+    public void ResumeGame()
     {
         Cursor.lockState = CursorLockMode.Locked;
         Time.timeScale = 1;
+        onGameResumed.Invoke();
     }
 
     private void PauseGame()
     {
         Cursor.lockState = CursorLockMode.None;
         Time.timeScale = 0;
+        onGamePaused.Invoke();
     }
 
     private void HandleGameOver()
