@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3834186556896562077}
   - component: {fileID: 8665650709035989818}
   - component: {fileID: 8586116372888923206}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Canister
   m_TagString: Untagged
   m_Icon: {fileID: 0}
