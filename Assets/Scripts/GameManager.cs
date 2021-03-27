@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject uiGameOver;
     [SerializeField] private Button uiRetryButton;
     [SerializeField] private PlayerController playerController;
+    [SerializeField] private GameObject uiStartScreen;
     
     [Header("Inputs")] 
     [SerializeField] private InputAction onCancel;
@@ -42,7 +43,7 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         _score = 0;
-        ResumeGame();
+        Time.timeScale = 0;
     }
 
     private void OnDisable()
@@ -69,9 +70,11 @@ public class GameManager : MonoBehaviour
 
     public void ResumeGame()
     {
+        uiStartScreen.SetActive(false);
         Cursor.lockState = CursorLockMode.Locked;
         Time.timeScale = 1;
         onGameResumed.Invoke();
+        uiHud.SetActive(true);
     }
 
     private void PauseGame()
