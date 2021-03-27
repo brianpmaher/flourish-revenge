@@ -9,6 +9,7 @@ public class EnemyController : MonoBehaviour
     [SerializeField] public GameObject player;
     [SerializeField] private Damager damager;
     [SerializeField] public GameManager gameManager;
+    [SerializeField] public AudioSource hoppingAudioSource;
 
     [Header("Config")] 
     [SerializeField] private float attackingDistance = 1;
@@ -93,12 +94,14 @@ public class EnemyController : MonoBehaviour
     {
         _isMoving = false;
         StopCoroutine(Move());
+        hoppingAudioSource.Stop();
     }
     
     private IEnumerator Move()
     {
         FacePlayer();
-
+        hoppingAudioSource.Play();
+        
         var ellapsedTime = 0f;
         while (ellapsedTime < 1f /* animation time */)
         {
