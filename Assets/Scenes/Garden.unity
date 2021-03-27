@@ -13193,6 +13193,10 @@ PrefabInstance:
       propertyPath: health
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 3705720666010488322, guid: 4583ba414713cd642b3b0fa2f27bf7c6, type: 3}
+      propertyPath: walkingAudioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: fe4b6a755bd2b0243a4e74b0bcf4cdd4, type: 3}
     - target: {fileID: 3812266515593541340, guid: 4583ba414713cd642b3b0fa2f27bf7c6, type: 3}
       propertyPath: m_RootOrder
       value: 15
@@ -13244,6 +13248,14 @@ PrefabInstance:
     - target: {fileID: 6514336605572283693, guid: 4583ba414713cd642b3b0fa2f27bf7c6, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6549852607164756875, guid: 4583ba414713cd642b3b0fa2f27bf7c6, type: 3}
+      propertyPath: Loop
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6549852607164756875, guid: 4583ba414713cd642b3b0fa2f27bf7c6, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6786431661171505502, guid: 4583ba414713cd642b3b0fa2f27bf7c6, type: 3}
       propertyPath: LightsModule.light

@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.InputSystem;
 
+[RequireComponent(typeof(AudioSource))]
 public class PlayerController : MonoBehaviour
 {
     [HideInInspector] public UnityEvent onDie;
@@ -15,6 +16,7 @@ public class PlayerController : MonoBehaviour
     [Header("Config")] 
     [SerializeField] private float moveSpeed = 3;
     [SerializeField] private float lookSpeed = 3;
+    [SerializeField] private AudioClip walkingAudioClip;
 
     [Header("Input")] 
     [SerializeField] private InputAction onMove;
@@ -24,12 +26,15 @@ public class PlayerController : MonoBehaviour
     private Vector2 moveDirection = Vector2.zero;
     private Vector2 lookDirection = Vector2.zero;
     private bool isDead;
+    private AudioSource _audioSource;
     private static readonly int MovementForward = Animator.StringToHash("MovementForward");
     private static readonly int MovementRight = Animator.StringToHash("MovementRight");
     private static readonly int AnimateDie = Animator.StringToHash("Die");
 
     private void Awake()
     {
+        _audioSource = GetComponent<AudioSource>();
+        
         // Handle inputs
         onMove.performed += ctx => moveDirection = ctx.ReadValue<Vector2>();
         onMove.canceled += ctx => moveDirection = Vector2.zero;
@@ -82,6 +87,19 @@ public class PlayerController : MonoBehaviour
         characterController.Move(globalMovement);
         animator.SetFloat(MovementForward,  localMovement.normalized.z);
         animator.SetFloat(MovementRight,  localMovement.normalized.x);
+
+        if (localMovement.normalized.magnitude > 0)
+        {
+            if (!_audioSource.isPlaying)
+            {
+                _audioSource.clip = walkingAudioClip;
+                _audioSource.Play();
+            }
+        }
+        else if (_audioSource.clip == walkingAudioClip)
+        {
+            _audioSource.Stop();
+        }
     }
 
     private void Look()
