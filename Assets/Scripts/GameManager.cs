@@ -22,6 +22,7 @@ public class GameManager : MonoBehaviour
 
     private bool GamePaused => Time.timeScale == 0;
     private int _score;
+    private bool _gameOver;
     
     public int Score => _score;
 
@@ -60,7 +61,7 @@ public class GameManager : MonoBehaviour
     
     private void HandleCancel()
     {
-        if (!GamePaused)
+        if (!GamePaused && !_gameOver)
         {
             PauseGame();
         }
@@ -82,6 +83,7 @@ public class GameManager : MonoBehaviour
 
     private void HandleGameOver()
     {
+        _gameOver = true;
         uiHud.SetActive(false);
         uiGameOver.SetActive(true);
         Cursor.lockState = CursorLockMode.None;
