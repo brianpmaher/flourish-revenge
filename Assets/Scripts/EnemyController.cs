@@ -10,6 +10,7 @@ public class EnemyController : MonoBehaviour
     [SerializeField] private Damager damager;
     [SerializeField] public GameManager gameManager;
     [SerializeField] public AudioSource hoppingAudioSource;
+    [SerializeField] public AudioSource bitingAudioSource;
 
     [Header("Config")] 
     [SerializeField] private float attackingDistance = 1;
@@ -148,6 +149,7 @@ public class EnemyController : MonoBehaviour
         var distanceToPlayer = Vector3.Magnitude(transform.position - player.transform.position);
         if (distanceToPlayer <= attackingDistance)
         {
+            bitingAudioSource.Play();
             _playerDamageable.TakeDamage(damager.damage);
             // Wait remainder of animation.
             yield return new WaitForSeconds(1 - giveDamageOffset);
