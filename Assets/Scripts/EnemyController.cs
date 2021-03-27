@@ -146,10 +146,11 @@ public class EnemyController : MonoBehaviour
             yield break;
         }
         
+        bitingAudioSource.Play();
+        
         var distanceToPlayer = Vector3.Magnitude(transform.position - player.transform.position);
         if (distanceToPlayer <= attackingDistance && !_isMoving)
         {
-            bitingAudioSource.Play();
             _playerDamageable.TakeDamage(damager.damage);
             // Wait remainder of animation.
             yield return new WaitForSeconds(1 - giveDamageOffset);
