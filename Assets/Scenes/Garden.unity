@@ -14199,6 +14199,10 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3705720666010488322, guid: 4583ba414713cd642b3b0fa2f27bf7c6, type: 3}
+      propertyPath: gameManager
+      value: 
+      objectReference: {fileID: 3514528732759815035}
+    - target: {fileID: 3705720666010488322, guid: 4583ba414713cd642b3b0fa2f27bf7c6, type: 3}
       propertyPath: walkingAudioClip
       value: 
       objectReference: {fileID: 8300000, guid: fe4b6a755bd2b0243a4e74b0bcf4cdd4, type: 3}

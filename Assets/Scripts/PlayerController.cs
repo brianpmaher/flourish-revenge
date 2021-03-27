@@ -12,6 +12,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Animator animator;
     [SerializeField] private Fireable weapon;
     [SerializeField] private Damageable damageable;
+    [SerializeField] private GameManager gameManager;
 
     [Header("Config")] 
     [SerializeField] private float moveSpeed = 3;
@@ -47,10 +48,20 @@ public class PlayerController : MonoBehaviour
     private void OnEnable()
     {
         damageable.onDie.AddListener(Die);
-    
-        onMove.Enable();
-        onLook.Enable();
-        onFire.Enable();
+
+        gameManager.onGameResumed.AddListener(() =>
+        {
+            onMove.Enable();
+            onLook.Enable();
+            onFire.Enable();
+        });
+
+        gameManager.onGamePaused.AddListener(() =>
+        {
+            onMove.Disable();
+            onLook.Disable();
+            onFire.Disable();
+        });
     }
     
     private void OnTriggerEnter(Collider other)
