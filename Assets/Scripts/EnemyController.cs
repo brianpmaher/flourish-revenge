@@ -61,7 +61,7 @@ public class EnemyController : MonoBehaviour
 
         if (distanceToPlayer <= attackingDistance)
         {
-            if (!_isAttacking)
+            if (!_isAttacking && !_isMoving)
             {
                 StartAttacking();
             }
@@ -78,7 +78,7 @@ public class EnemyController : MonoBehaviour
                 StopAttacking();
             }
 
-            if (!_isMoving)
+            if (!_isMoving && !_isAttacking)
             {
                 StartMoving();
             }
@@ -117,7 +117,7 @@ public class EnemyController : MonoBehaviour
         }
         
         var distanceToPlayer = Vector3.Magnitude(transform.position - player.transform.position);
-        if (distanceToPlayer > attackingDistance)
+        if (distanceToPlayer > attackingDistance && !_isAttacking)
         {
             StartCoroutine(Move());
         }
@@ -147,7 +147,7 @@ public class EnemyController : MonoBehaviour
         }
         
         var distanceToPlayer = Vector3.Magnitude(transform.position - player.transform.position);
-        if (distanceToPlayer <= attackingDistance)
+        if (distanceToPlayer <= attackingDistance && !_isMoving)
         {
             bitingAudioSource.Play();
             _playerDamageable.TakeDamage(damager.damage);
