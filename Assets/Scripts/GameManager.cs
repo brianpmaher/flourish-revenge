@@ -14,6 +14,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private Button uiRetryButton;
     [SerializeField] private PlayerController playerController;
     [SerializeField] private GameObject uiStartScreen;
+    [SerializeField] private GameObject uiCreditScreen;
     
     [Header("Inputs")] 
     [SerializeField] private InputAction onCancel;
@@ -95,5 +96,17 @@ public class GameManager : MonoBehaviour
     private void RestartGame()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
+    public void ShowCredits()
+    {
+        uiStartScreen.SetActive(false);
+        uiCreditScreen.SetActive(true);
+    }
+
+    public void ReturnToStart()
+    {
+        uiCreditScreen.SetActive(false);
+        uiStartScreen.SetActive(true);
     }
 }
