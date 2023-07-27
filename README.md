@@ -1,7 +1,6 @@
 # Flourish - Revenge
 
-Game Jam project for Game Dev Field Guide Game Jam #3 (March 2021).  This was also my first completed 3D game project!
-
+Game Jam project for Game Dev Field Guide Game Jam #3 (March 2021).
 Game is available for download at https://brianpmaher.itch.io/flourish-revenge
 
 I wasn't able to make this repo public because I didn't do a good job of separating some Unity assets used here and I didn't want to violate the Unity Asset Store License.
